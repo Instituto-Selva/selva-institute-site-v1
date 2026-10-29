@@ -18,23 +18,34 @@
     <title>Selva Institute — Formamos líderes</title>
   </head>
   <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <a class="skip-link" href="#conteudo" data-i18n="skipLink">Ir para o conteúdo</a>
 
     <header class="site-header" data-header>
-      <a class="mini-brand" href="#inicio" aria-label="Selva Institute — início">
+      <a class="mini-brand" href="#inicio" aria-label="Selva Institute — início" data-i18n-aria-label="homeAria">
         <img src="assets/selva-institute-logo.svg" alt="Selva Institute">
       </a>
 
-      <nav class="nav" id="menu-principal" aria-label="Navegação principal" data-nav>
-        <a href="#instituto">O Instituto</a>
-        <a href="#atuacao">Atuação</a>
-        <a href="#programas">Programas</a>
-        <a href="#contato">Contato</a>
+      <nav class="nav" id="menu-principal" aria-label="Navegação principal" data-nav data-i18n-aria-label="navAria">
+        <a href="#instituto" data-i18n="navInstitute">O Instituto</a>
+        <a href="#atuacao" data-i18n="navWork">Atuação</a>
+        <a href="#programas" data-i18n="navPrograms">Programas</a>
+        <a href="#contato" data-i18n="navContact">Contato</a>
       </nav>
+
+      <div
+        class="language-switcher"
+        aria-label="Selecionar idioma"
+        data-i18n-aria-label="languageSelectorAria"
+        role="group"
+      >
+        <button class="language-option" type="button" data-language="pt-BR" aria-pressed="true" aria-label="Mudar para português">PT</button>
+        <button class="language-option" type="button" data-language="en" aria-pressed="false" aria-label="Switch to English">EN</button>
+        <button class="language-option" type="button" data-language="es" aria-pressed="false" aria-label="Cambiar a español">ES</button>
+      </div>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-button>
         <span></span><span></span>
-        <span class="sr-only">Abrir menu</span>
+        <span class="sr-only" data-menu-label>Abrir menu</span>
       </button>
     </header>
 
@@ -42,7 +53,7 @@
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-stage">
           <img class="hero-logo reveal" src="assets/selva-institute-logo.svg" alt="Selva Institute">
-          <p class="hero-region reveal">Brasil <span></span> América Latina</p>
+          <p class="hero-region reveal" data-i18n-html="regionHtml">Brasil <span></span> América Latina</p>
         </div>
 
         <div class="manifest">
@@ -52,13 +63,13 @@
 
           <div class="shell manifest-inner">
             <h1 id="hero-title" class="reveal">
-              <span>Formamos líderes.</span>
-              <span>Fortalecemos o movimento.</span>
-              <span>Transformamos sistemas.</span>
+              <span data-i18n="heroLine1">Formamos líderes.</span>
+              <span data-i18n="heroLine2">Fortalecemos o movimento.</span>
+              <span data-i18n="heroLine3">Transformamos sistemas.</span>
             </h1>
 
             <div class="manifest-foot reveal">
-              <p>Identificamos, formamos e conectamos talentos preparados para assumir posições-chave nas organizações mais estratégicas do setor.</p>
+              <p data-i18n="manifestCopy">Identificamos, formamos e conectamos talentos preparados para assumir posições-chave nas organizações mais estratégicas do setor.</p>
             </div>
           </div>
         </div>
@@ -66,127 +77,127 @@
 
       <section class="section intro" id="instituto" aria-labelledby="intro-title">
         <div class="shell">
-          <div class="section-index reveal"><span>01</span><p>O Instituto</p></div>
+          <div class="section-index reveal"><span>01</span><p data-i18n="instituteLabel">O Instituto</p></div>
 
           <div class="intro-title reveal">
-            <h2 id="intro-title">A sociedade civil precisa de lideranças preparadas para decidir.</h2>
+            <h2 id="intro-title" data-i18n="introTitle">A sociedade civil precisa de lideranças preparadas para decidir.</h2>
           </div>
 
           <div class="intro-copy">
-            <p class="intro-lead reveal">O Selva Institute é uma incubadora-escola de excelência, altamente seletiva, criada para enfrentar a escassez de gestores e dirigentes profissionalizados no terceiro setor.</p>
+            <p class="intro-lead reveal" data-i18n="introLead">O Selva Institute é uma incubadora-escola de excelência, altamente seletiva, criada para enfrentar a escassez de gestores e dirigentes profissionalizados no terceiro setor.</p>
             <div class="intro-detail reveal">
-              <p>Preparamos uma nova geração de lideranças para ocupar posições estratégicas, ampliar a capacidade institucional das organizações e potencializar causas de relevância pública e social.</p>
-              <p>Nossa atuação combina formação rigorosa, experiência aplicada, redes de colaboração e apoio institucional.</p>
+              <p data-i18n="introDetail1">Preparamos uma nova geração de lideranças para ocupar posições estratégicas, ampliar a capacidade institucional das organizações e potencializar causas de relevância pública e social.</p>
+              <p data-i18n="introDetail2">Nossa atuação combina formação rigorosa, experiência aplicada, redes de colaboração e apoio institucional.</p>
             </div>
           </div>
 
-          <ol class="impact-flow" aria-label="Trajetória de impacto">
-            <li class="reveal"><span>01</span><strong>Potencial</strong><p>Talentos são identificados.</p></li>
-            <li class="reveal"><span>02</span><strong>Formação</strong><p>Lideranças se desenvolvem.</p></li>
-            <li class="reveal"><span>03</span><strong>Capacidade</strong><p>Organizações se fortalecem.</p></li>
-            <li class="reveal"><span>04</span><strong>Escala</strong><p>Sistemas se transformam.</p></li>
+          <ol class="impact-flow" aria-label="Trajetória de impacto" data-i18n-aria-label="impactAria">
+            <li class="reveal"><span>01</span><strong data-i18n="impact1Title">Potencial</strong><p data-i18n="impact1Copy">Talentos são identificados.</p></li>
+            <li class="reveal"><span>02</span><strong data-i18n="impact2Title">Formação</strong><p data-i18n="impact2Copy">Lideranças se desenvolvem.</p></li>
+            <li class="reveal"><span>03</span><strong data-i18n="impact3Title">Capacidade</strong><p data-i18n="impact3Copy">Organizações se fortalecem.</p></li>
+            <li class="reveal"><span>04</span><strong data-i18n="impact4Title">Escala</strong><p data-i18n="impact4Copy">Sistemas se transformam.</p></li>
           </ol>
         </div>
       </section>
 
       <section class="section work" id="atuacao" aria-labelledby="work-title">
         <div class="shell">
-          <div class="section-index section-index-light reveal"><span>02</span><p>Como atuamos</p></div>
+          <div class="section-index section-index-light reveal"><span>02</span><p data-i18n="workLabel">Como atuamos</p></div>
 
           <div class="work-heading reveal">
-            <h2 id="work-title">Duas frentes.<br>Uma única estratégia.</h2>
-            <p>Formar pessoas e fortalecer organizações são movimentos indissociáveis.</p>
+            <h2 id="work-title" data-i18n-html="workTitle">Duas frentes.<br>Uma única estratégia.</h2>
+            <p data-i18n="workIntro">Formar pessoas e fortalecer organizações são movimentos indissociáveis.</p>
           </div>
 
           <div class="work-lines">
             <article class="work-line reveal">
               <p class="work-number">01</p>
               <div>
-                <h3>Formação e inserção de lideranças</h3>
-                <p>Desenvolvemos profissionais altamente qualificados para atuar em posições de decisão no ecossistema das organizações da sociedade civil.</p>
+                <h3 data-i18n="work1Title">Formação e inserção de lideranças</h3>
+                <p data-i18n="work1Copy">Desenvolvemos profissionais altamente qualificados para atuar em posições de decisão no ecossistema das organizações da sociedade civil.</p>
               </div>
               <ul>
-                <li>Gestão e finanças</li>
-                <li>Advocacy e políticas públicas</li>
-                <li>Comunicação e campanhas</li>
-                <li>Mobilização de recursos</li>
+                <li data-i18n="work1Item1">Gestão e finanças</li>
+                <li data-i18n="work1Item2">Advocacy e políticas públicas</li>
+                <li data-i18n="work1Item3">Comunicação e campanhas</li>
+                <li data-i18n="work1Item4">Mobilização de recursos</li>
               </ul>
             </article>
 
             <article class="work-line reveal">
               <p class="work-number">02</p>
               <div>
-                <h3>Incubação e fortalecimento de organizações</h3>
-                <p>Apoiamos novas organizações e iniciativas de alto impacto com estrutura, conhecimento e capacidade para crescer com consistência.</p>
+                <h3 data-i18n="work2Title">Incubação e fortalecimento de organizações</h3>
+                <p data-i18n="work2Copy">Apoiamos novas organizações e iniciativas de alto impacto com estrutura, conhecimento e capacidade para crescer com consistência.</p>
               </div>
               <ul>
-                <li>Incubação e aceleração</li>
-                <li>Apoio técnico e institucional</li>
-                <li>Estratégia e governança</li>
-                <li>Sustentabilidade financeira</li>
+                <li data-i18n="work2Item1">Incubação e aceleração</li>
+                <li data-i18n="work2Item2">Apoio técnico e institucional</li>
+                <li data-i18n="work2Item3">Estratégia e governança</li>
+                <li data-i18n="work2Item4">Sustentabilidade financeira</li>
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <div class="practice-strip" aria-label="Áreas de formação">
+      <div class="practice-strip" aria-label="Áreas de formação" data-i18n-aria-label="practiceAria">
         <div class="practice-track">
-          <span>Gestão</span><i></i><span>Advocacy</span><i></i><span>Finanças</span><i></i><span>Políticas públicas</span><i></i><span>Comunicação</span><i></i><span>Inovação social</span><i></i>
-          <span aria-hidden="true">Gestão</span><i aria-hidden="true"></i><span aria-hidden="true">Advocacy</span><i aria-hidden="true"></i><span aria-hidden="true">Finanças</span><i aria-hidden="true"></i><span aria-hidden="true">Políticas públicas</span><i aria-hidden="true"></i><span aria-hidden="true">Comunicação</span><i aria-hidden="true"></i><span aria-hidden="true">Inovação social</span><i aria-hidden="true"></i>
+          <span data-i18n="practice1">Gestão</span><i></i><span data-i18n="practice2">Advocacy</span><i></i><span data-i18n="practice3">Finanças</span><i></i><span data-i18n="practice4">Políticas públicas</span><i></i><span data-i18n="practice5">Comunicação</span><i></i><span data-i18n="practice6">Inovação social</span><i></i>
+          <span aria-hidden="true" data-i18n="practice1">Gestão</span><i aria-hidden="true"></i><span aria-hidden="true" data-i18n="practice2">Advocacy</span><i aria-hidden="true"></i><span aria-hidden="true" data-i18n="practice3">Finanças</span><i aria-hidden="true"></i><span aria-hidden="true" data-i18n="practice4">Políticas públicas</span><i aria-hidden="true"></i><span aria-hidden="true" data-i18n="practice5">Comunicação</span><i aria-hidden="true"></i><span aria-hidden="true" data-i18n="practice6">Inovação social</span><i aria-hidden="true"></i>
         </div>
       </div>
 
       <section class="section programs" id="programas" aria-labelledby="programs-title">
         <div class="shell programs-grid">
           <div class="programs-intro reveal">
-            <div class="section-index"><span>03</span><p>Plataforma de atuação</p></div>
-            <h2 id="programs-title">Da formação ao impacto em escala.</h2>
-            <p>Uma arquitetura integrada para desenvolver pessoas, produzir conhecimento, articular redes e fortalecer organizações.</p>
+            <div class="section-index"><span>03</span><p data-i18n="programsLabel">Plataforma de atuação</p></div>
+            <h2 id="programs-title" data-i18n="programsTitle">Da formação ao impacto em escala.</h2>
+            <p data-i18n="programsIntro">Uma arquitetura integrada para desenvolver pessoas, produzir conhecimento, articular redes e fortalecer organizações.</p>
           </div>
 
           <div class="program-list">
             <details class="program reveal" open>
               <summary>
                 <span>01</span>
-                <strong>Formação e talentos</strong>
+                <strong data-i18n="program1Title">Formação e talentos</strong>
                 <i aria-hidden="true"></i>
               </summary>
               <div class="program-body">
-                <p>Programas imersivos em gestão, advocacy, finanças e inovação social, combinados a iniciativas de inserção profissional e permanência no mercado de trabalho.</p>
+                <p data-i18n="program1Copy">Programas imersivos em gestão, advocacy, finanças e inovação social, combinados a iniciativas de inserção profissional e permanência no mercado de trabalho.</p>
               </div>
             </details>
 
             <details class="program reveal">
               <summary>
                 <span>02</span>
-                <strong>Conhecimento e prática</strong>
+                <strong data-i18n="program2Title">Conhecimento e prática</strong>
                 <i aria-hidden="true"></i>
               </summary>
               <div class="program-body">
-                <p>Pesquisas, estudos, diagnósticos, publicações e metodologias para qualificar a liderança, a governança e a gestão no campo da sociedade civil.</p>
+                <p data-i18n="program2Copy">Pesquisas, estudos, diagnósticos, publicações e metodologias para qualificar a liderança, a governança e a gestão no campo da sociedade civil.</p>
               </div>
             </details>
 
             <details class="program reveal">
               <summary>
                 <span>03</span>
-                <strong>Redes e articulação</strong>
+                <strong data-i18n="program3Title">Redes e articulação</strong>
                 <i aria-hidden="true"></i>
               </summary>
               <div class="program-body">
-                <p>Parcerias nacionais e internacionais, eventos, cursos e redes de cooperação que aproximam pessoas, organizações, recursos e conhecimento.</p>
+                <p data-i18n="program3Copy">Parcerias nacionais e internacionais, eventos, cursos e redes de cooperação que aproximam pessoas, organizações, recursos e conhecimento.</p>
               </div>
             </details>
 
             <details class="program reveal">
               <summary>
                 <span>04</span>
-                <strong>Incubação e sustentabilidade</strong>
+                <strong data-i18n="program4Title">Incubação e sustentabilidade</strong>
                 <i aria-hidden="true"></i>
               </summary>
               <div class="program-body">
-                <p>Aceleração e apoio técnico, institucional e financeiro, incluindo captação, gestão e aplicação de recursos para organizações de alto impacto.</p>
+                <p data-i18n="program4Copy">Aceleração e apoio técnico, institucional e financeiro, incluindo captação, gestão e aplicação de recursos para organizações de alto impacto.</p>
               </div>
             </details>
           </div>
@@ -195,30 +206,30 @@
 
       <section class="section convictions" aria-labelledby="convictions-title">
         <div class="shell">
-          <div class="section-index section-index-light reveal"><span>04</span><p>O que nos orienta</p></div>
+          <div class="section-index section-index-light reveal"><span>04</span><p data-i18n="convictionsLabel">O que nos orienta</p></div>
           <div class="convictions-heading reveal">
-            <h2 id="convictions-title">Ambição com rigor.<br>Impacto com responsabilidade.</h2>
-            <p>Nossa forma de agir é tão importante quanto o resultado que buscamos.</p>
+            <h2 id="convictions-title" data-i18n-html="convictionsTitle">Ambição com rigor.<br>Impacto com responsabilidade.</h2>
+            <p data-i18n="convictionsIntro">Nossa forma de agir é tão importante quanto o resultado que buscamos.</p>
           </div>
 
           <ol class="convictions-list">
-            <li class="reveal"><span>01</span><p>Impacto acima de intenção</p></li>
-            <li class="reveal"><span>02</span><p>Decisão baseada em evidências</p></li>
-            <li class="reveal"><span>03</span><p>Excelência e alta performance</p></li>
-            <li class="reveal"><span>04</span><p>Integridade e responsabilidade</p></li>
-            <li class="reveal"><span>05</span><p>Colaboração entre organizações</p></li>
-            <li class="reveal"><span>06</span><p>Aprendizado contínuo</p></li>
-            <li class="reveal"><span>07</span><p>Ambição por mudança sistêmica</p></li>
-            <li class="reveal"><span>08</span><p>Humildade epistêmica</p></li>
+            <li class="reveal"><span>01</span><p data-i18n="conviction1">Impacto acima de intenção</p></li>
+            <li class="reveal"><span>02</span><p data-i18n="conviction2">Decisão baseada em evidências</p></li>
+            <li class="reveal"><span>03</span><p data-i18n="conviction3">Excelência e alta performance</p></li>
+            <li class="reveal"><span>04</span><p data-i18n="conviction4">Integridade e responsabilidade</p></li>
+            <li class="reveal"><span>05</span><p data-i18n="conviction5">Colaboração entre organizações</p></li>
+            <li class="reveal"><span>06</span><p data-i18n="conviction6">Aprendizado contínuo</p></li>
+            <li class="reveal"><span>07</span><p data-i18n="conviction7">Ambição por mudança sistêmica</p></li>
+            <li class="reveal"><span>08</span><p data-i18n="conviction8">Humildade epistêmica</p></li>
           </ol>
         </div>
       </section>
 
       <section class="section contact" id="contato" aria-labelledby="contact-title">
         <div class="shell contact-inner reveal">
-          <p class="contact-kicker">Vamos construir</p>
-          <h2 id="contact-title">O futuro da sociedade civil começa com as lideranças que formamos hoje.</h2>
-          <p>Estamos reunindo talentos, organizações, parceiros e apoiadores comprometidos com impacto em escala.</p>
+          <p class="contact-kicker" data-i18n="contactKicker">Vamos construir</p>
+          <h2 id="contact-title" data-i18n="contactTitle">O futuro da sociedade civil começa com as lideranças que formamos hoje.</h2>
+          <p data-i18n="contactCopy">Estamos reunindo talentos, organizações, parceiros e apoiadores comprometidos com impacto em escala.</p>
           <a class="contact-link" href="mailto:geral@selvainstitute.org">geral@selvainstitute.org <span aria-hidden="true">↗</span></a>
         </div>
       </section>
@@ -227,17 +238,18 @@
     <footer class="footer">
       <div class="shell footer-main">
         <img src="assets/selva-institute-logo.svg" alt="Selva Institute">
-        <p>Formação de lideranças e organizações da sociedade civil.</p>
+        <p data-i18n="footerTagline">Formação de lideranças e organizações da sociedade civil.</p>
         <div>
-          <p>Brasil · América Latina</p>
+          <p data-i18n="regionPlain">Brasil · América Latina</p>
         </div>
       </div>
       <div class="shell footer-base">
         <p>© <span data-year></span> Selva Institute</p>
-        <a href="#inicio">Voltar ao topo ↑</a>
+        <a href="#inicio" data-i18n="backToTop">Voltar ao topo ↑</a>
       </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

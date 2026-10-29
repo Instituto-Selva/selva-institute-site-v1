@@ -1,13 +1,86 @@
 document.documentElement.classList.add("js");
 
+const DEFAULT_LANGUAGE = "pt-BR";
+const LANGUAGE_STORAGE_KEY = "selva-language";
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
+const menuLabel = document.querySelector("[data-menu-label]");
 const nav = document.querySelector("[data-nav]");
+const languageButtons = document.querySelectorAll("[data-language]");
+let currentLanguage = DEFAULT_LANGUAGE;
+
+function getStoredLanguage() {
+  try {
+    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    return TRANSLATIONS[storedLanguage] ? storedLanguage : DEFAULT_LANGUAGE;
+  } catch {
+    return DEFAULT_LANGUAGE;
+  }
+}
+
+function storeLanguage(language) {
+  try {
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // The page still works when browser storage is unavailable.
+  }
+}
+
+function updateMenuLabel() {
+  if (!menuLabel || !menuButton) return;
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  menuLabel.textContent = TRANSLATIONS[currentLanguage][isOpen ? "menuClose" : "menuOpen"];
+}
+
+function updateMetadata(dictionary) {
+  document.title = dictionary.documentTitle;
+
+  const description = document.querySelector('meta[name="description"]');
+  const openGraphTitle = document.querySelector('meta[property="og:title"]');
+  const openGraphDescription = document.querySelector('meta[property="og:description"]');
+
+  if (description) description.content = dictionary.metaDescription;
+  if (openGraphTitle) openGraphTitle.content = dictionary.ogTitle;
+  if (openGraphDescription) openGraphDescription.content = dictionary.ogDescription;
+}
+
+function applyLanguage(language, persist = true) {
+  const nextLanguage = TRANSLATIONS[language] ? language : DEFAULT_LANGUAGE;
+  const dictionary = TRANSLATIONS[nextLanguage];
+  currentLanguage = nextLanguage;
+  document.documentElement.lang = nextLanguage;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const translation = dictionary[element.dataset.i18n];
+    if (translation !== undefined) element.textContent = translation;
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const translation = dictionary[element.dataset.i18nHtml];
+    if (translation !== undefined) element.innerHTML = translation;
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const translation = dictionary[element.dataset.i18nAriaLabel];
+    if (translation !== undefined) element.setAttribute("aria-label", translation);
+  });
+
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.language === nextLanguage;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  updateMetadata(dictionary);
+  updateMenuLabel();
+  if (persist) storeLanguage(nextLanguage);
+}
 
 function closeMenu() {
   menuButton?.setAttribute("aria-expanded", "false");
   nav?.classList.remove("is-open");
   document.body.classList.remove("menu-open");
+  updateMenuLabel();
 }
 
 menuButton?.addEventListener("click", () => {
@@ -15,9 +88,17 @@ menuButton?.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", String(nextOpen));
   nav?.classList.toggle("is-open", nextOpen);
   document.body.classList.toggle("menu-open", nextOpen);
+  updateMenuLabel();
 });
 
 nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyLanguage(button.dataset.language);
+    closeMenu();
+  });
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
@@ -27,6 +108,7 @@ function updateHeader() {
   header?.classList.toggle("is-scrolled", window.scrollY > 18);
 }
 
+applyLanguage(getStoredLanguage(), false);
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
