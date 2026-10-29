@@ -96,6 +96,10 @@ const TRANSLATIONS = {
       "O futuro da sociedade civil começa pelas lideranças que formamos hoje.",
     contactCopy:
       "Estamos reunindo talentos, organizações, parceiros e apoiadores comprometidos com impacto em escala.",
+    copyEmail: "Copiar e-mail",
+    copyEmailCopied: "E-mail copiado!",
+    copyEmailError: "Não foi possível copiar",
+    copyEmailAria: "Copiar endereço de e-mail",
     footerTagline: "Formação de lideranças e organizações da sociedade civil.",
     backToTop: "Voltar ao topo ↑",
   },
@@ -196,6 +200,10 @@ const TRANSLATIONS = {
       "The future of civil society begins with the leaders we develop today.",
     contactCopy:
       "We are bringing together talented people, organizations, partners and supporters committed to impact at scale.",
+    copyEmail: "Copy email",
+    copyEmailCopied: "Email copied!",
+    copyEmailError: "Unable to copy",
+    copyEmailAria: "Copy email address",
     footerTagline: "Leadership and organizational development for civil society.",
     backToTop: "Back to top ↑",
   },
@@ -296,6 +304,10 @@ const TRANSLATIONS = {
       "El futuro de la sociedad civil comienza con los líderes que formamos hoy.",
     contactCopy:
       "Estamos reuniendo talentos, organizaciones, aliados y colaboradores comprometidos con el impacto a escala.",
+    copyEmail: "Copiar correo",
+    copyEmailCopied: "¡Correo copiado!",
+    copyEmailError: "No se pudo copiar",
+    copyEmailAria: "Copiar dirección de correo electrónico",
     footerTagline: "Formación de líderes y organizaciones de la sociedad civil.",
     backToTop: "Volver arriba ↑",
   },

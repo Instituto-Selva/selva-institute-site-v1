@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261029-2">
     <title>Selva Institute — Formamos líderes</title>
   </head>
   <body>
@@ -234,7 +234,19 @@
           <p class="contact-kicker" data-i18n="contactKicker">Vamos construir</p>
           <h2 id="contact-title" data-i18n="contactTitle">O futuro da sociedade civil começa com as lideranças que formamos hoje.</h2>
           <p data-i18n="contactCopy">Estamos reunindo talentos, organizações, parceiros e apoiadores comprometidos com impacto em escala.</p>
-          <a class="contact-link" href="mailto:geral@selvainstitute.org">geral@selvainstitute.org <span aria-hidden="true">↗</span></a>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:geral@selvainstitute.org">geral@selvainstitute.org <span aria-hidden="true">↗</span></a>
+            <button
+              class="contact-copy"
+              type="button"
+              data-copy-email="geral@selvainstitute.org"
+              data-i18n-aria-label="copyEmailAria"
+              aria-label="Copiar endereço de e-mail"
+            >
+              <span data-copy-label data-i18n="copyEmail" aria-live="polite">Copiar e-mail</span>
+              <i class="copy-icon" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </section>
     </main>
@@ -253,7 +265,7 @@
       </div>
     </footer>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="translations.js?v=20261029-2"></script>
+    <script src="script.js?v=20261029-2"></script>
   </body>
 </html>

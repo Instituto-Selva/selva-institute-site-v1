@@ -7,7 +7,10 @@ const menuButton = document.querySelector("[data-menu-button]");
 const menuLabel = document.querySelector("[data-menu-label]");
 const nav = document.querySelector("[data-nav]");
 const languageButtons = document.querySelectorAll("[data-language]");
+const copyEmailButton = document.querySelector("[data-copy-email]");
+const copyEmailLabel = document.querySelector("[data-copy-label]");
 let currentLanguage = DEFAULT_LANGUAGE;
+let copyEmailResetTimer;
 
 function getStoredLanguage() {
   try {
@@ -24,6 +27,31 @@ function storeLanguage(language) {
   } catch {
     // The page still works when browser storage is unavailable.
   }
+}
+
+function copyEmailWithFallback(email) {
+  const textarea = document.createElement("textarea");
+  textarea.value = email;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  textarea.style.pointerEvents = "none";
+  document.body.appendChild(textarea);
+  textarea.select();
+  textarea.setSelectionRange(0, email.length);
+
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  return copied;
+}
+
+async function copyEmailAddress(email) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(email);
+    return true;
+  }
+
+  return copyEmailWithFallback(email);
 }
 
 function updateMenuLabel() {
@@ -98,6 +126,36 @@ languageButtons.forEach((button) => {
     applyLanguage(button.dataset.language);
     closeMenu();
   });
+});
+
+copyEmailButton?.addEventListener("click", async () => {
+  const dictionary = TRANSLATIONS[currentLanguage];
+  const email = copyEmailButton.dataset.copyEmail;
+  let copied = false;
+
+  window.clearTimeout(copyEmailResetTimer);
+
+  try {
+    copied = await copyEmailAddress(email);
+  } catch {
+    copied = false;
+  }
+
+  if (copyEmailLabel) {
+    copyEmailLabel.textContent = dictionary[copied ? "copyEmailCopied" : "copyEmailError"];
+  }
+
+  copyEmailButton.classList.toggle("is-copied", copied);
+  copyEmailButton.setAttribute(
+    "aria-label",
+    dictionary[copied ? "copyEmailCopied" : "copyEmailError"]
+  );
+
+  copyEmailResetTimer = window.setTimeout(() => {
+    if (copyEmailLabel) copyEmailLabel.textContent = TRANSLATIONS[currentLanguage].copyEmail;
+    copyEmailButton.classList.remove("is-copied");
+    copyEmailButton.setAttribute("aria-label", TRANSLATIONS[currentLanguage].copyEmailAria);
+  }, 2600);
 });
 
 document.addEventListener("keydown", (event) => {
